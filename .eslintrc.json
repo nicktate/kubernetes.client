@@ -1,0 +1,3 @@
+{
+    "extends": "@containership/eslint-config-containership.eslint.backend"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "kubernetes.client",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
+    "test": "./node_modules/.bin/ava test/version_compare.js --verbose"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:containership/kubernetes.client",
+  "author": "containership developers <developers@containership.io>",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^3.12.0",
+    "lodash": "^4.17.10",
+    "request": "^2.87.0",
+    "semver": "^5.5.0"
+  },
+  "devDependencies": {
+    "@containership/eslint-config-containership.eslint.backend": "^1.0.3",
+    "ava": "^0.25.0",
+    "eslint": "^5.1.0"
+  }
+}
