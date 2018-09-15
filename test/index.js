@@ -40,10 +40,11 @@ async function run() {
     await client.loadSpec();
 
     try {
-        let res = await client.resources.Deployment.post(deployment);
+        let res = await client.resources.CustomResourceDefinition.get()
         console.log(res);
-        res = await client.resources.Deployment.post(deployment);
-        console.log(res);
+
+        let prom = await client.resources.Prometheus.allNamespaces().list()
+        console.log(prom)
     } catch(error) {
         console.error(error);
     }
