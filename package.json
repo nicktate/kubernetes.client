@@ -2,7 +2,7 @@
   "name": "@containership/kubernetes.client",
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
-    "test": "./node_modules/.bin/ava test/version_compare.js --verbose"
+    "test": "./node_modules/.bin/ava test/*.js --verbose"
   },
   "version": "0.2.1",
   "main": "index.js",
