@@ -36,7 +36,7 @@ const client = new KubernetesClient({
 
 If you know the version of Kubernetes the cluster is running, you can specify it
 when setting up the client. If not, you can always dynamically load the cluster
-api spec (this is preferred).
+API spec (this is preferred).
 
 After setting up a initial client config, run the following command:
 
@@ -44,17 +44,17 @@ After setting up a initial client config, run the following command:
 await client.loadSpec()
 ```
 
-Once you have loaded the cluster specification either dynamically for from specifying
+Once you have loaded the cluster specification either dynamically or from specifying
 an initial Kubernetes version, you have access to all the resources from the
 `client.resources` object.
 
-To list all the `Deployments` on the cluster in the `default`, you would just have to run the following:
+For example, to list all the `Deployments` on the cluster in the `default` namespace, just run the following:
 
 ```
 const deployments = await client.resources.Deployment.list()
 ```
 
-You can specify a specific namespace and many other configurable parameters through the builder api.
+You can specify a specific namespace and many other configurable parameters through the builder API.
 
 ```
 const customNamespaceDeployments = await client.resources.Deployment.namespace('custom').list()
@@ -67,7 +67,7 @@ method, and it handles fetching and combining all the resources into a single `l
 const allDeployments = await KubernetesClient.paginate(client.resources.Deployment.allNamespaces().limit(25))
 ```
 
-Extensive usage documentation and examples will become available as the project matures
+Extensive usage documentation and examples will become available as the project matures.
 
 ## Contributing
 
@@ -81,7 +81,7 @@ However, if the feature you're considering adding is fairly large in scope, plea
 
 https://github.com/godaddy/kubernetes-client
 
-We loved the way the kubernetes-client automatically generated user friendly APIs from cluster openapi specs. With all this additional
+We loved the way the kubernetes-client automatically generated user friendly APIs from cluster OpenAPI specs. With all this additional
 knowledge, we didn't think end users should have to understand which API version of resources they need to deal with to communicate
-with a cluster. We flipped the concept and provide a power way to interact with clusters without having to specify API versions, but
-still expose that flexiblity to you if needed.
+with a cluster. We flipped the concept and provide a powerful way to interact with clusters without having to specify API versions, but
+still expose that flexibility to you if needed.
