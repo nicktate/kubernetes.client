@@ -81,7 +81,7 @@ However, if the feature you're considering adding is fairly large in scope, plea
 
 https://github.com/godaddy/kubernetes-client
 
-We loved the way the kubernetes.client automatically generated user friendly APIs from cluster openapi specs. With all this additional
-knowledge, we didn't think end users should have to know and understand which api version of resources they need to deal with to communicate
-with a cluster. We flipped the concept and provide a power way to interact with clusters without having the need to specify API versions, but
-still leave that flexiblity to you if needed.
+We loved the way the kubernetes-client automatically generated user friendly APIs from cluster openapi specs. With all this additional
+knowledge, we didn't think end users should have to understand which API version of resources they need to deal with to communicate
+with a cluster. We flipped the concept and provide a power way to interact with clusters without having to specify API versions, but
+still expose that flexiblity to you if needed.
