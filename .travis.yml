@@ -1,0 +1,21 @@
+language: node_js
+dist: trusty
+
+node_js:
+  - "10.12"
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+stages:
+  - name: Tests
+
+jobs:
+  include:
+    - stage: "Tests"
+    - name: "Lint"
+      script: yarn run lint
+    - name: "Unit Tests"
+      script: yarn run test
