@@ -1,21 +1,25 @@
 language: node_js
+sudo: false
 dist: trusty
-
 node_js:
-  - "10.12"
-
+- '10.12'
 cache:
   yarn: true
   directories:
-    - node_modules
-
+  - node_modules
+deploy:
+  provider: npm
+  email: nick@containership.io
+  api_key:
+    secure: kB2Uz1CvdAGOiDh09Z8uHsxvSQBTWRCN08gICbOudwl6GHpszIPuXLW+/RA+T0eNWxjMG8GnxHLLm5Qg0L8Nz07Gfkrz/8ao/6ma2UQukgfU262Zx+7AUloSkYLL9eHamHjRqStbEmk65eM4sjB7qvNBDaS2+9pqVpxt1bpNLWTKkbHyzXG5Im79quwTc70B4ccsU5dQruHCHx/R8hMp2vhpfV38TmkLYqQurB7+g6YtHePK0vNwbUM3AmGCKdFQhNCS9JXt4he9aQzWhmJ9rRkCb94B12r5jqAReIv/NWi+OnmslAQ3/OjNo7TGE/9G8U2WvyQtwNnhZnbYHYtD+RIDK7cswA91oAuf8NMn3i9gswwB0MtRNgt8QPUrQbuusxx+PKvu8J/xH6VA11lBle2z0siWSbCZ1gnNjqrH+Gx7SY7MFQWkfD68NS9vTH/7/UDULe/jxz49zoX+x9D4znQRs+xzOYkNK0WiuMUd9rPyMNMf7GFSh5cb03Rk4WwBk9jzz2KkZ0HxJzEe/03vOz0gMx5BzZxBMk6tt6mYt1ARFYpbGv2/79YXDep2yj3TSpmPx//RQZPgTLraO3Ieflq+SO1HHF3VUwp+fNobn1YkebDJXXr6sA5e3CgwXD65ujmlSNEJ4j//DdwGMKpuqRd6mp0EaQ1HSTNjVJ834NI=
 stages:
-  - name: Tests
-
+- test
+- name: deploy
+  if: tag IS present
 jobs:
   include:
-    - stage: "Tests"
-    - name: "Lint"
-      script: yarn run lint
-    - name: "Unit Tests"
-      script: yarn run test
+  - name: lint
+    script: yarn run lint
+  - name: unit tests
+    script: yarn run test
+  - stage: deploy
