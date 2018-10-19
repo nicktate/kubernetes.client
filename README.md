@@ -1,5 +1,7 @@
 # kubernetes.client
 
+[![Build Status](https://travis-ci.org/containership/kubernetes.client.svg?branch=master)](https://travis-ci.org/containership/kubernetes.client)
+
 `kubernetes.client` is an opinionated javascript client for Kubernetes clusters.
 
 **Warning**: This project is currently under active development and is subject to breaking changes without notice.
