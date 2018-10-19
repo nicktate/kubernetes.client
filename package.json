@@ -19,5 +19,8 @@
     "@containership/eslint-config-containership.eslint.backend": "^1.0.3",
     "ava": "^0.25.0",
     "eslint": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
