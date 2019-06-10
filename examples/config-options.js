@@ -15,12 +15,14 @@ async function fromKubeConfig() {
     // Manually specify a kubeconfig path and context
     client = new KubernetesClient({
         config: KubernetesClient.Config.fromKubeConfig({
-            kubeConfig: `${HOME}/customconfig`,
-            context: 'mycontext',
+            kubeConfig: `${process.env.HOME}/.kube/config`,
+            // context: 'mycontext',
         }),
     });
+
     await client.loadSpec()
 }
+fromKubeConfig()
 
 async function manualConfig() {
     let client;
