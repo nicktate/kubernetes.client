@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "js-yaml": "^3.12.0",
-    "lodash": "^4.17.10",
+    "lodash": "4.17.13",
     "request": "^2.87.0",
     "semver": "^5.5.0"
   },
